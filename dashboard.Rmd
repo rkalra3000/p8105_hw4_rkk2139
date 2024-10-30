@@ -1,5 +1,5 @@
 ---
-title: "Dashboard!!"
+title: "Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -12,61 +12,88 @@ library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
+library(dplyr)
 ```
 
 ```{r}
-data("nyc_airbnb")
+data("instacart")
 
-nyc_airbnb = 
-  nyc_airbnb |> 
-  mutate(rating = review_scores_location / 2) |> 
-  select(
-    rating, neighbourhood_group, neighbourhood, 
-    room_type, lat, long, price) |> 
-  drop_na(rating) |> 
-  filter(
-    neighbourhood_group == "Manhattan", 
-    room_type == "Entire home/apt", 
-    price %in% 100:500
-  )
+instacart <-
+  instacart |> 
+  sample_frac(0.05) |>
+  select(-eval_set) |>
+  filter(department != "missing")
+
 ```
 
-Column {data-width=650}
 -----------------------------------------------------------------------
 
 ### Chart A
 
 ```{r}
-nyc_airbnb |> 
-  mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
-  plot_ly(
-    x = ~neighbourhood, y = ~price, color = ~neighbourhood,
-    type = "box", colors = "viridis")
+# Box plot for order times by day of the week
+plot_ly(data = instacart, 
+        x = ~factor(order_dow, levels = 0:6, labels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")), 
+        y = ~order_hour_of_day, 
+        type = 'box') %>%
+  layout(title = "Order Time Distribution by Day of the Week",
+         xaxis = list(title = "Day of the Week"),
+         yaxis = list(title = "Order Hour of the Day"))
 ```
 
-Column {data-width=350}
 -----------------------------------------------------------------------
 
 ### Chart B
 
 ```{r}
-nyc_airbnb |> 
-  mutate(
-    text_label = 
-      str_c("Price: ", price, "\nNeighborhood: ", neighbourhood)) |> 
-  plot_ly(
-    x = ~lat, y = ~long, color = ~price, text = ~text_label,
-    type = "scatter", mode = "markers", alpha = 0.5
-  )
+# Grouped Bar Plot
+
+# Filter the data for selected departments
+selected_departments <- instacart %>%
+  filter(department %in% c("alcohol", "snacks", "beverages", "frozen", "produce"))
+
+
+# Count orders by day of the week for each selected department
+orders_by_day <- selected_departments %>%
+  count(order_dow, department) %>%
+  mutate(day_label = factor(order_dow, levels = 0:6,
+                            labels = c("Sunday", "Monday", "Tuesday", "Wednesday",
+                                       "Thursday", "Friday", "Saturday")))
+# Create plot
+plot_ly(data = orders_by_day,
+        x = ~day_label,
+        y = ~n,
+        color = ~department,
+        type = 'bar') %>%
+  layout(title = "Orders by Day of the Week for Selected Departments",
+         xaxis = list(title = "Day of the Week"),
+         yaxis = list(title = "Number of Orders"),
+         barmode = "group")
 ```
 
-### Chart C
+### Chart 3
+```{r, warning = FALSE}
+#Line plot
 
-```{r}
-nyc_airbnb |> 
-  count(neighbourhood) |> 
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
-  plot_ly(
-    x = ~neighbourhood, y = ~n, 
-    type = "bar")
+# Filter out the unwanted departments
+selected_departments <- instacart %>%
+  filter(!department %in% c("babies", "pets", "other", "bulk", "personal care"))
+
+# Group by hour and department to get the order counts
+orders_by_hour_dept <- selected_departments %>%
+  count(order_hour_of_day, department)
+
+# Create the line plot, coloring by department
+plot_ly(data = orders_by_hour_dept, 
+        x = ~order_hour_of_day, 
+        y = ~n, 
+        color = ~department, 
+        colors = "Paired",
+        type = 'scatter', 
+        mode = 'lines+markers') %>%
+  layout(title = "Orders Over the Day by Hour and Department",
+         xaxis = list(title = "Hour of the Day"),
+         yaxis = list(title = "Number of Orders"),
+         legend = list(title = list(text = "Department")))
+
 ```
