@@ -1,28 +1,74 @@
 ---
-title: "My awesome website"
+title: "Riya Kalra"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-# This is Jeff's awesome website
+Welcome to my website! I'm Riya, currently pursuing a Master of Science in Biostatistics at Columbia University, with a background in Bioinformatics from UC San Diego. My professional interests include healthcare, data science, and public health. I invite you to explore my academic and professional journey and learn more about my research.
+
+# Education
+
+- **Columbia University**  
+  Master of Science in Biostatistics  
+  *Expected Graduation: May 2026*
+
+- **University of California, San Diego**  
+  Bachelor of Science in Bioinformatics  
+  Minor in Computer Science  
+
+- **Universidad Carlos III de Madrid, Spain**  
+  Study Abroad Semester  
+  Taught in Spanish
 
 
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+# Experience
 
-This is an **awesome website** about data science and elmo?
+**Belsky Lab, Columbia University Aging Center**  
+*Data Science Research Intern*  
+*08/2024 – Present*  
+*Tools Used*: R  
 
-Sometimes I use [google](https://www.google.com/) to do data science when I'm stuck.
+- Analyzing data from early to late-stage clinical trials to derive the clinical impact of Type 2 Diabetes risk factors.
 
-This is my cat Ted. He is a good cat.
+**Ferguson Lab, UC San Diego Health**  
+*Bioinformatics and Next Generation Sequencing Research Intern*  
+*03/2022 – 06/2024*  
+*Tools Used*: Amazon Web Services (AWS), Linux/UNIX, Python, R, deepTools  
 
-![](images/ted.jpg)
+- Presented as the youngest researcher at the 2023 UCSD School of Medicine Pathology Retreat.
+- Publication **IN PRESS** scheduled for 2024.
+- Developed a bioinformatics pipeline to analyze Next-Generation Sequencing (NGS) data.
 
-<img src="images/ted.jpg" style="width:75%">
+**BD (Becton, Dickinson and Company), San Diego, CA**  
+*Embedded Software Systems and Data Analytics R&D Intern*  
+*04/2023 – 08/2023*  
+*Tools Used*: C, C++, Python, GitHub, SciKit-Learn, Matplotlib  
+
+- Innovated a machine learning model to predict pump maintenance, optimizing data collection by over 75%.
+- Developed an embedded software alarm system for BD’s Alaris infusion pumps, now being deployed.
+
+**Lundbeck Biopharmaceuticals, La Jolla, CA**  
+*Bioinformatics and Databases Intern*  
+*09/2022 – 04/2023*  
+*Tools Used*: Pandas, Django, Docker, SQL, Python, Vue, HTML, CSS, pytest  
+
+- Queried and contextualized large-scale proteomics datasets using SQL, Pandas, and Django.
+- Built data models and test frameworks for proteomics data analysis.
+
+**Pekkurnaz Lab, UC San Diego**  
+*Bioinformatics and Fluorescence Microscopy Research Intern*  
+*03/2021 – 12/2021*  
+*Software Used*: Java, FIJI, ImageJ, confocal microscopes, fluorescence microscopes  
+
+- Analyzed 150+ fluorescence microscope images to track morphology and protein expression in mitochondria and ER.
 
 
-If you'd like to learn more about this website, visit [this page](about.html).
+# Contact
 
+You can reach me on my professional network by clicking the icons at the top right or the links below:
 
-NOW I CAN PUT STUFF ON THE INTERNET
+- [GitHub](https://github.com/rkalra3000)
+- [LinkedIn](https://www.linkedin.com/in/riya-kalra)
+- [Email](mailto:rkk2139@cumc.columbia.edu)
