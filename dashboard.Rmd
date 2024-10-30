@@ -6,6 +6,7 @@ output:
     vertical_layout: fill
 ---
 
+
 ```{r setup, include=FALSE}
 library(flexdashboard)
 
@@ -25,8 +26,6 @@ instacart <-
   filter(department != "missing")
 
 ```
-Column {data-width=650}
------------------------------------------------------------------------
 
 ### Chart A
 
@@ -35,7 +34,7 @@ Column {data-width=650}
 plot_ly(data = instacart, 
         x = ~factor(order_dow, levels = 0:6, labels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")), 
         y = ~order_hour_of_day, 
-        type = 'box') %>%
+        type = 'box') |>
   layout(title = "Order Time Distribution by Day of the Week",
          xaxis = list(title = "Day of the Week"),
          yaxis = list(title = "Order Hour of the Day"))
@@ -49,13 +48,13 @@ plot_ly(data = instacart,
 # Grouped Bar Plot
 
 # Filter the data for selected departments
-selected_departments <- instacart %>%
+selected_departments <- instacart |>
   filter(department %in% c("alcohol", "snacks", "beverages", "frozen", "produce"))
 
 
 # Count orders by day of the week for each selected department
-orders_by_day <- selected_departments %>%
-  count(order_dow, department) %>%
+orders_by_day <- selected_departments |>
+  count(order_dow, department) |>
   mutate(day_label = factor(order_dow, levels = 0:6,
                             labels = c("Sunday", "Monday", "Tuesday", "Wednesday",
                                        "Thursday", "Friday", "Saturday")))
@@ -64,7 +63,7 @@ plot_ly(data = orders_by_day,
         x = ~day_label,
         y = ~n,
         color = ~department,
-        type = 'bar') %>%
+        type = 'bar') |>
   layout(title = "Orders by Day of the Week for Selected Departments",
          xaxis = list(title = "Day of the Week"),
          yaxis = list(title = "Number of Orders"),
@@ -76,11 +75,11 @@ plot_ly(data = orders_by_day,
 #Line plot
 
 # Filter out the unwanted departments
-selected_departments <- instacart %>%
+selected_departments <- instacart |>
   filter(!department %in% c("babies", "pets", "other", "bulk", "personal care"))
 
 # Group by hour and department to get the order counts
-orders_by_hour_dept <- selected_departments %>%
+orders_by_hour_dept <- selected_departments |>
   count(order_hour_of_day, department)
 
 # Create the line plot, coloring by department
@@ -90,7 +89,7 @@ plot_ly(data = orders_by_hour_dept,
         color = ~department, 
         colors = "Paired",
         type = 'scatter', 
-        mode = 'lines+markers') %>%
+        mode = 'lines+markers') |>
   layout(title = "Orders Over the Day by Hour and Department",
          xaxis = list(title = "Hour of the Day"),
          yaxis = list(title = "Number of Orders"),
