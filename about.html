@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Riya Kalra" />
 
 
-<title>About</title>
+<title>Resume</title>
 
 <script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -30,6 +29,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -222,6 +224,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -229,6 +294,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -249,7 +324,7 @@ $(document).ready(function () {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="about.html">About</a>
+  <a href="about.html">Resume</a>
 </li>
 <li>
   <a href="dashboard.html">Dashboard</a>
@@ -281,18 +356,88 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About</h1>
-<h4 class="author">Riya Kalra</h4>
+<h1 class="title toc-ignore">Resume</h1>
 
 </div>
 
 
-<p>This site is home to my P8101 HW 4 assignment, including a resume and
-an interactive dashboard for plotly plots based on the Instacart
-dataset</p>
+<div id="education" class="section level3">
+<h3>Education</h3>
+<ul>
+<li><p><strong>Columbia University</strong><br />
+Master of Science in Biostatistics<br />
+<em>Expected Graduation: May 2026</em></p></li>
+<li><p><strong>University of California, San Diego</strong><br />
+Bachelor of Science in Bioinformatics<br />
+Minor in Computer Science</p></li>
+<li><p><strong>Universidad Carlos III de Madrid, Spain</strong><br />
+Study Abroad Semester<br />
+Taught in Spanish</p></li>
+</ul>
+</div>
+<div id="experience" class="section level3">
+<h3>Experience</h3>
+<p><strong>Belsky Lab, Columbia University Aging Center</strong><br />
+<em>Data Science Research Intern</em><br />
+<em>08/2024 – Present</em><br />
+<em>Tools Used</em>: R</p>
+<ul>
+<li>Analyzing data from early to late-stage clinical trials to derive
+the clinical impact of Type 2 Diabetes risk factors.</li>
+</ul>
+<p><strong>Ferguson Lab, UC San Diego Health</strong><br />
+<em>Bioinformatics and Next Generation Sequencing Research
+Intern</em><br />
+<em>03/2022 – 06/2024</em><br />
+<em>Tools Used</em>: Amazon Web Services (AWS), Linux/UNIX, Python, R,
+deepTools</p>
+<ul>
+<li>Presented as the youngest researcher at the 2023 UCSD School of
+Medicine Pathology Retreat.</li>
+<li>Publication <strong>IN PRESS</strong> scheduled for 2024.</li>
+<li>Developed a bioinformatics pipeline to analyze Next-Generation
+Sequencing (NGS) data.</li>
+</ul>
+<p><strong>BD (Becton, Dickinson and Company), San Diego,
+CA</strong><br />
+<em>Embedded Software Systems and Data Analytics R&amp;D
+Intern</em><br />
+<em>04/2023 – 08/2023</em><br />
+<em>Tools Used</em>: C, C++, Python, GitHub, SciKit-Learn,
+Matplotlib</p>
+<ul>
+<li>Innovated a machine learning model to predict pump maintenance,
+optimizing data collection by over 75%.</li>
+<li>Developed an embedded software alarm system for BD’s Alaris infusion
+pumps, now being deployed.</li>
+</ul>
+<p><strong>Lundbeck Biopharmaceuticals, La Jolla, CA</strong><br />
+<em>Bioinformatics and Databases Intern</em><br />
+<em>09/2022 – 04/2023</em><br />
+<em>Tools Used</em>: Pandas, Django, Docker, SQL, Python, Vue, HTML,
+CSS, pytest</p>
+<ul>
+<li>Queried and contextualized large-scale proteomics datasets using
+SQL, Pandas, and Django.</li>
+<li>Built data models and test frameworks for proteomics data
+analysis.</li>
+</ul>
+<p><strong>Pekkurnaz Lab, UC San Diego</strong><br />
+<em>Bioinformatics and Fluorescence Microscopy Research
+Intern</em><br />
+<em>03/2021 – 12/2021</em><br />
+<em>Software Used</em>: Java, FIJI, ImageJ, confocal microscopes,
+fluorescence microscopes</p>
+<ul>
+<li>Analyzed 150+ fluorescence microscope images to track morphology and
+protein expression in mitochondria and ER.</li>
+</ul>
+</div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -325,6 +470,35 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

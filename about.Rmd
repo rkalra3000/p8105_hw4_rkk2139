@@ -1,7 +1,63 @@
 ---
-title: "About"
-author: "Riya Kalra"
-output: html_document
+title: "Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
-This site is home to my P8101 HW 4 assignment, including a resume and an interactive dashboard for plotly plots based on the Instacart dataset
+### Education
+
+- **Columbia University**  
+  Master of Science in Biostatistics  
+  *Expected Graduation: May 2026*
+
+- **University of California, San Diego**  
+  Bachelor of Science in Bioinformatics  
+  Minor in Computer Science  
+
+- **Universidad Carlos III de Madrid, Spain**  
+  Study Abroad Semester  
+  Taught in Spanish
+
+
+### Experience
+
+**Belsky Lab, Columbia University Aging Center**  
+*Data Science Research Intern*  
+*08/2024 – Present*  
+*Tools Used*: R  
+
+- Analyzing data from early to late-stage clinical trials to derive the clinical impact of Type 2 Diabetes risk factors.
+
+**Ferguson Lab, UC San Diego Health**  
+*Bioinformatics and Next Generation Sequencing Research Intern*  
+*03/2022 – 06/2024*  
+*Tools Used*: Amazon Web Services (AWS), Linux/UNIX, Python, R, deepTools  
+
+- Presented as the youngest researcher at the 2023 UCSD School of Medicine Pathology Retreat.
+- Publication **IN PRESS** scheduled for 2024.
+- Developed a bioinformatics pipeline to analyze Next-Generation Sequencing (NGS) data.
+
+**BD (Becton, Dickinson and Company), San Diego, CA**  
+*Embedded Software Systems and Data Analytics R&D Intern*  
+*04/2023 – 08/2023*  
+*Tools Used*: C, C++, Python, GitHub, SciKit-Learn, Matplotlib  
+
+- Innovated a machine learning model to predict pump maintenance, optimizing data collection by over 75%.
+- Developed an embedded software alarm system for BD’s Alaris infusion pumps, now being deployed.
+
+**Lundbeck Biopharmaceuticals, La Jolla, CA**  
+*Bioinformatics and Databases Intern*  
+*09/2022 – 04/2023*  
+*Tools Used*: Pandas, Django, Docker, SQL, Python, Vue, HTML, CSS, pytest  
+
+- Queried and contextualized large-scale proteomics datasets using SQL, Pandas, and Django.
+- Built data models and test frameworks for proteomics data analysis.
+
+**Pekkurnaz Lab, UC San Diego**  
+*Bioinformatics and Fluorescence Microscopy Research Intern*  
+*03/2021 – 12/2021*  
+*Software Used*: Java, FIJI, ImageJ, confocal microscopes, fluorescence microscopes  
+
+- Analyzed 150+ fluorescence microscope images to track morphology and protein expression in mitochondria and ER.

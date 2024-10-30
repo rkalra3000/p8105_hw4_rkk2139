@@ -25,7 +25,7 @@ instacart <-
   filter(department != "missing")
 
 ```
-
+Column {data-width=650}
 -----------------------------------------------------------------------
 
 ### Chart A
